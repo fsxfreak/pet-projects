@@ -1,0 +1,22 @@
+CC=g++
+CFLAGS=-c -Wall -std=c++11
+
+# userFontFinder.exe, userFontArchiver.exe
+all: userFontFinder userFontArchiver
+
+# userFontFinder.exe
+userFontFinder: userFontFinder.o
+	$(CC) userFontFinder.o -o bin/userFontFinder.exe
+
+userFontFinder.o: userFontFinder.cpp
+	$(CC) $(CFLAGS) userFontFinder.cpp
+
+# userFontArchiver.exe
+userFontArchiver: userFontArchiver.o
+	$(CC) userFontArchiver.o -o bin/userFontArchiver.exe
+
+userFontArchiver.o: userFontArchiver.cpp
+	$(CC) $(CFLAGS) userFontArchiver.cpp
+
+clean:
+	rm -rf *.o
