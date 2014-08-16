@@ -1,0 +1,13 @@
+CC=g++
+CFLAGS=-c -Wall -std=c++11
+INCLUDES=-Iinclude
+PROGNAME=renand
+
+.PHONY: clean
+
+all: $(PROGNAME)
+$(PROGNAME): renand.o
+	$(CC) $(INCLUDES) renand.o -o bin/$(PROGNAME).exe
+
+renand.o: renand.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) renand.cpp
