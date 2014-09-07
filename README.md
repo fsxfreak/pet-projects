@@ -9,6 +9,7 @@ Most of these utilities run in the command line. Some are Windows only, but othe
 The source code for each pet-project is located in the base directory of their respective folders. All header files (external and internal dependencies) are located in ```include/```.
 * ```font-organizer``` - Pulls all font files from a given font directory, and copies all custom (user) fonts to a separate directory.
 * ```random-renamer``` - Renames all files (not directories) in a given directory to a random name. Preserves file extensions.
+* ```markovgen``` - Gets transition probabilities from a seed text, and spits out generated words using a Markov chain.
 
 ## License
 
