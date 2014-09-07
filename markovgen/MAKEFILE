@@ -1,0 +1,25 @@
+CC=g++
+CFLAGS=-c -Wall -std=c++11 -O3
+INCLUDES=-Iinclude
+PROGNAME=markovPassGen
+
+.PHONY: clean
+
+all: $(PROGNAME)
+$(PROGNAME): chain.o state.o markovPassGen.o passGenChain.o
+	$(CC) $(INCLUDES) chain.o state.o markovPassGen.o passGenChain.o -o bin/$(PROGNAME).exe
+
+chain.o: chain.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) chain.cpp 
+
+state.o: state.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) state.cpp 
+
+markovPassGen.o: markovPassGen.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) markovPassGen.cpp 
+
+passGenChain.o: passGenChain.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) passGenChain.cpp
+
+clean:
+	rm -rf *.o
